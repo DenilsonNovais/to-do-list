@@ -1,44 +1,41 @@
-📝 Descrição do Projeto — React Todo App
+📝 React Todo App
 
-Este projeto é uma aplicação Todo List desenvolvida em React + Vite, criada com o objetivo de demonstrar organização de código, componentização, gerência de estado com hooks e boas práticas de desenvolvimento front-end.
-A aplicação permite criar, listar, editar, filtrar, buscar, marcar como concluída e remover tarefas, tudo de forma simples e intuitiva.
+Uma aplicação Todo List desenvolvida em React + Vite, com foco em boas práticas, organização de código, componentização e gerenciamento de estado com hooks.
+O projeto simula um backend real utilizando localStorage por meio de uma API mock (src/api/tasks.js).
 
-Os dados são armazenados utilizando localStorage, simulando um backend real através de uma API mockada (src/api/tasks.js).
-O foco do projeto é mostrar domínio em:
+A proposta deste projeto é demonstrar domínio em:
 
-Estruturação de pastas por responsabilidade
+Estruturação limpa de pastas
 
 Componentes reutilizáveis
 
 Hooks customizados (useTasks)
 
-Fluxo de CRUD completo
+Fluxo completo de CRUD
 
-Boas práticas de UI e UX
+Boas práticas de UI/UX
 
-Organização de commits e versionamento Git
+Histórico de commits organizados (Git)
 
-É um projeto ideal para estudos, testes técnicos, portfólio ou como base para aplicações React mais robustas.
+É ideal para estudos, testes técnicos, portfólio ou como base para aplicações React mais completas.
 
 🎯 Principais Funcionalidades
 
-Criar novas tarefas
+➕ Criar novas tarefas
 
-Editar tarefas existentes
+✏️ Editar tarefas existentes
 
-Excluir tarefas
+❌ Excluir tarefas
 
-Marcar como concluídas / não concluídas
+✔️ Marcar/desmarcar como concluídas
 
-Filtrar lista por All | Todo | Done
+🔍 Buscar tarefas por título
 
-Buscar tarefas pelo título
+📂 Filtrar lista por All | Todo | Done
 
-Persistência dos dados com localStorage
+💾 Persistência de dados via localStorage
 
-Feedback visual simples e direto
-
-Estrutura limpa e fácil de evoluir
+🎨 Interface simples, responsiva e fácil de evoluir
 
 🧩 Tecnologias Utilizadas
 
@@ -46,10 +43,18 @@ React 19
 
 Vite 7
 
-JavaScript (ES Modules)
+JavaScript ES Modules
 
 LocalStorage API
 
-Hooks React (useState, useEffect, useCallback, useMemo)
+React Hooks:
 
-CSS modularizado em um único arquivo (styles.css)
+useState
+
+useEffect
+
+useCallback
+
+useMemo
+
+CSS único e modularizado (styles.css)
