@@ -1,60 +1,94 @@
-📝 React Todo App
+<<<<<<< HEAD
+<!-- prettier-ignore -->
+# 📝 To‑Do List — React + Vite
 
-Uma aplicação Todo List desenvolvida em React + Vite, com foco em boas práticas, organização de código, componentização e gerenciamento de estado com hooks.
-O projeto simula um backend real utilizando localStorage por meio de uma API mock (src/api/tasks.js).
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
 
-A proposta deste projeto é demonstrar domínio em:
+Uma aplicação simples de lista de tarefas construída com React e Vite. O objetivo é servir como projeto de estudo, portfólio ou ponto de partida para apps maiores — com componentes reutilizáveis, hooks customizados e persistência via `localStorage`.
 
-Estruturação limpa de pastas
+**Destaques:** criar, editar, buscar, filtrar e marcar tarefas como concluídas.
 
-Componentes reutilizáveis
+**Demo rápido**
 
-Hooks customizados (useTasks)
+- Rodando localmente: siga os passos em **Instalação**.
+- Dados persistem no `localStorage` do navegador (sem backend obrigatório).
 
-Fluxo completo de CRUD
+**Índice**
 
-Boas práticas de UI/UX
+- [Funcionalidades](#funcionalidades)
+- [Instalação e execução](#instalação-e-execução)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Como usar](#como-usar)
+- [Contribuição](#contribuição)
+- [Contato / Autor](#contato--autor)
 
-Histórico de commits organizados (Git)
+## Funcionalidades
 
-É ideal para estudos, testes técnicos, portfólio ou como base para aplicações React mais completas.
+- Criar novas tarefas com título
+- Editar tarefas existentes
+- Remover tarefas
+- Marcar como concluída / desmarcar
+- Filtrar por: All | Todo | Done
+- Buscar tarefas por título
+- Persistência dos dados com `localStorage`
 
-🎯 Principais Funcionalidades
+## Instalação e execução
 
-➕ Criar novas tarefas
+Pré-requisitos: Node.js 18+ e npm ou pnpm.
 
-✏️ Editar tarefas existentes
+1. Instalar dependências:
 
-❌ Excluir tarefas
+```bash
+npm install
+```
 
-✔️ Marcar/desmarcar como concluídas
+2. Rodar em modo de desenvolvimento:
 
-🔍 Buscar tarefas por título
+```bash
+npm run dev
+```
 
-📂 Filtrar lista por All | Todo | Done
+3. Build para produção e pré-visualização (opcional):
 
-💾 Persistência de dados via localStorage
+```bash
+npm run build
+npm run preview
+```
 
-🎨 Interface simples, responsiva e fácil de evoluir
+## Estrutura do projeto (resumida)
 
-🧩 Tecnologias Utilizadas
+```
+├─ public/
+├─ src/
+│  ├─ api/tasks.js        # mock de API + persistência
+│  ├─ components/         # UI: TaskList, TaskItem, TaskForm, FilterBar
+│  ├─ hooks/useTasks.jsx  # lógica e state centralizado
+│  └─ pages/Home.jsx
+├─ index.html
+├─ package.json
+└─ vite.config.js
+```
 
-React 19
+## Como usar
 
-Vite 7
+- Abra a aplicação no navegador (normalmente `http://localhost:5173`).
+- Use o formulário para adicionar tarefas.
+- Clique no título para editar (ou botão de editar, conforme UI).
+- Use os filtros para visualizar tarefas pendentes, concluídas ou todas.
 
-JavaScript ES Modules
+> Observação: se quiser resetar os dados, limpe o `localStorage` do domínio (Ferramentas de desenvolvedor → Application → Local Storage).
 
-LocalStorage API
+## Contribuição
 
-React Hooks:
+Contribuições são bem-vindas — abra uma issue ou um pull request. Sugestões:
 
-useState
+- Adicionar testes automatizados
+- Integração com backend real (API)
+- Melhorias de acessibilidade e UI
 
-useEffect
+## Contato / Autor
 
-useCallback
+Desenvolvido por Denilson Novais. Para sugestões ou dúvidas, abra uma issue neste repositório.
 
-useMemo
+---
 
-CSS único e modularizado (styles.css)
