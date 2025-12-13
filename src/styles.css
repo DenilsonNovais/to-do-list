@@ -1,109 +1,399 @@
-/* (D) styles.css — único arquivo de estilos do projeto. */
+/* Modern To-Do List Styles */
 
-/* Define variáveis de cor globais para manter um tema consistente. */
+/* Define variáveis de cor globais para um tema moderno e atraente. */
 :root {
-  --bg: #f9fafb;
-  --text: #111;
-  --muted: #666;
-  --card: #fff;
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+  --card: #ffffff;
   --primary: #3b82f6;
   --primary-hover: #2563eb;
-  --border: #e5e7eb;
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --secondary: #f1f5f9;
+  --accent: #06b6d4;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
 }
 
 /* Reset básico e configuração de `box-sizing` para todos os elementos. */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 /* Garante que o layout principal possa ocupar 100% da altura da tela. */
 html, body, #root {
   height: 100%;
 }
 
-/* Estilos base para o corpo da página (tipografia, cores, etc.). */
+/* Estilos base para o corpo da página com fundo gradiente sutil. */
 body {
-  font-family: Inter, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
-  margin: 0;
-  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Estilos para os títulos. */
-h1, h2 {
-  margin: 0;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-/* Adiciona um espaçamento vertical entre as seções principais da página. */
-section {
-  margin-bottom: 32px;
-}
-
-/* Estilo padrão para todos os botões. */
-button {
-  cursor: pointer;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 0.15s, border-color 0.15s;
-}
-
-/* Efeito visual quando o mouse passa por cima do botão. */
-button:hover {
-  background: #f3f4f6;
-  border-color: #d1d5db;
-}
-
-/* Classe especial para botões de ação primária (ex: "Adicionar"). */
-button.primary {
-  background: var(--primary);
+/* Header com gradiente */
+header {
+  background: var(--bg-gradient);
   color: white;
-  border-color: var(--primary);
-}
-
-button.primary:hover {
-  background: var(--primary-hover);
-  border-color: var(--primary-hover);
-}
-
-/* Estilo padrão para campos de formulário. */
-input, textarea, select {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 8px 10px;
-  font-size: 14px;
-  width: 100%;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-
-/* Classe para elementos com aparência de "cartão" (fundo branco e sombra). */
-.card {
-  background: var(--card);
-  padding: 16px;
-  border-radius: 8px;
+  padding: 2rem 0;
+  text-align: center;
   box-shadow: var(--shadow);
 }
 
-/* Classe de container para centralizar o conteúdo principal da página. */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Estilos para os títulos. */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Adiciona espaçamento vertical entre as seções principais da página. */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Estilo padrão para todos os botões com design moderno. */
+button {
+  cursor: pointer;
+  border: none;
+  background: var(--secondary);
+  color: var(--text);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Classe especial para botões de ação primária. */
+button.primary, .btn-submit {
+  background: var(--primary);
+  color: white;
+}
+
+button.primary:hover, .btn-submit:hover {
+  background: var(--primary-hover);
+  color: white;
+}
+
+/* Botões específicos */
+.btn-edit {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #0891b2;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+/* Estilo padrão para campos de formulário com foco moderno. */
+input, textarea, select {
+  border: 2px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  width: 100%;
+  transition: var(--transition);
+  background: var(--card);
+  color: var(--text);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Classe para elementos com aparência de "cartão" moderna. */
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Container principal */
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 2rem 1rem;
+}
+
+/* Task Form Styles */
+.task-form {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.form-input {
+  flex: 1;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Filter Bar Styles */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.filter-select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.search-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-input {
+  width: 100%;
+}
+
+/* Task List Styles */
+.task-list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Task Item Styles */
+.task-item {
+  background: var(--card);
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: var(--transition);
+  border-left: 4px solid var(--primary);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.task-item:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.task-done {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-left-color: #22c55e;
+}
+
+.task-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.task-done .task-title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-description {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.task-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .task-actions {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+
+.error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid #dc2626;
 }

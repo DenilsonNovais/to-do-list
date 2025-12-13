@@ -27,27 +27,27 @@ export default function TaskForm({ initial = { title: '', description: '' }, onS
 
 
     return (
-        <form onSubmit={handleSubmit} style={{ marginBottom: 12 }} aria-label="form-tarefa">
-            <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+        <form onSubmit={handleSubmit} className="task-form" aria-label="form-tarefa">
+            <div className="form-row">
                 <input
                     placeholder="Título"
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                     aria-label="Título"
-                    style={{ flex: 1, padding: '8px 10px' }}
+                    className="form-input"
                 />
-                <button type="submit" disabled={submitting} style={{ padding: '8px 12px' }}>{submitting ? '...' : submitLabel}</button>
+                <button type="submit" disabled={submitting} className="btn-submit">{submitting ? '...' : submitLabel}</button>
             </div>
-            <div style={{ marginTop: 8 }}>
+            <div className="form-row">
                 <textarea
                     placeholder="Descrição (opcional)"
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     rows={2}
-                    style={{ width: '100%', padding: '8px 10px' }}
+                    className="form-textarea"
                 />
             </div>
-            {error && <div role="alert" style={{ color: 'crimson', marginTop: 8 }}>{error}</div>}
+            {error && <div role="alert" className="form-error">{error}</div>}
         </form>
     );
 }

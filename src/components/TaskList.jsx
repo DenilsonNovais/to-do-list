@@ -7,7 +7,7 @@ export default function TaskList({ tasks, onToggleDone, onDelete, onEdit }) {
 
 
     return (
-        <div style={{ display: 'grid', gap: 8 }}>
+        <div className="task-list">
             {tasks.map(t => (
                 <TaskItem key={t.id} task={t} onToggleDone={onToggleDone} onDelete={onDelete} onEdit={onEdit} />
             ))}

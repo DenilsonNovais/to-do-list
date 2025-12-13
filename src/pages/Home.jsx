@@ -41,28 +41,29 @@ export default function Home() {
   // Na primeira renderização, `loading` será `true`, então "Carregando..." será exibido.
   // Após o `useEffect` em `useTasks` completar, o estado `tasks` é atualizado, e este componente é re-renderizado com a lista de tarefas.
   return (
-    <main className="container">
-      <h1>Todo - Exemplo React</h1>
+    <div>
+      <header>
+        <h1>To-Do List</h1>
+        <p>Organize suas tarefas de forma simples e eficiente</p>
+      </header>
+      <main className="container">
+        <section>
+          <h2>➕ Criar Nova Tarefa</h2>
+          <TaskForm onSubmit={handleAdd} submitLabel="Adicionar" />
+        </section>
 
-      <section>
-        <h2>Criar tarefa</h2>
-        {/* O formulário recebe a função `handleAdd` para ser chamada na submissão. */}
-        <TaskForm onSubmit={handleAdd} submitLabel="Adicionar" className="primary" />
-      </section>
+        <section>
+          <h2>🔍 Filtrar e Buscar</h2>
+          <FilterBar filter={filter} setFilter={setFilter} query={query} setQuery={setQuery} />
+        </section>
 
-      <section>
-        <h2>Filtrar / Buscar</h2>
-        {/* A barra de filtro recebe e atualiza os estados de filtro e busca. */}
-        <FilterBar filter={filter} setFilter={setFilter} query={query} setQuery={setQuery} />
-      </section>
-
-      <section>
-        <h2>Lista</h2>
-        {/* Renderização condicional: mostra loading, erro ou a lista de tarefas. */}
-        {loading && <div>Carregando...</div>}
-        {error && <div style={{ color: 'crimson' }}>{error}</div>}
-        <TaskList tasks={filtered} onToggleDone={handleToggle} onDelete={handleDelete} onEdit={handleEdit} />
-      </section>
-    </main>
+        <section>
+          <h2>📋 Suas Tarefas</h2>
+          {loading && <div className="loading">Carregando tarefas...</div>}
+          {error && <div className="error">Erro: {error}</div>}
+          <TaskList tasks={filtered} onToggleDone={handleToggle} onDelete={handleDelete} onEdit={handleEdit} />
+        </section>
+      </main>
+    </div>
   );
 }
