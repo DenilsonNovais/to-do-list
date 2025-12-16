@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- prettier-ignore -->
 # 📝 To‑Do List — React + Vite
 
